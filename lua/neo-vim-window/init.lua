@@ -1,9 +1,11 @@
+local buffer, window
+
 local function Start()
   local uiState = vim.api.nvim_list_uis()[1]
   print("Window Size!", uiState.width, uiState.height)
 
-  local bufh = vim.api.nvim_create_buf(false, true)
-  local winId = vim.api.nvim_open_win(bufh, true, {
+  buffer = vim.api.nvim_create_buf(false, true)
+  window = winId = vim.api.nvim_open_win(buffer, true, {
     relative="editor",
     width = width - 4,
     height = height - 4,
@@ -21,8 +23,7 @@ local function Resize()
     print(i, vim.inspect(uiStates[i]))
   end
   --[[
-  local bufh = vim.api.nvim_create_buf(false, true)
-  local winId = vim.api.nvim_open_win(bufh, true, {
+  window = vim.api.nvim_open_win(buffer, true, {
     relative="editor",
     width = width - 4,
     height = height - 4,
@@ -36,4 +37,5 @@ end
 
 return {
   Start = Start
+  Resize = Resize
 }
