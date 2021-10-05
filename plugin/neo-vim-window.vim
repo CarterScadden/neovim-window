@@ -1,11 +1,12 @@
 lua print("HI CARTER")
-NeoVimWindow()
 
-fun! NeoVimWindow()
+function NeoVimWindow()
   lua print("HI CARTER 2")
   lua for k in pairs(package.loaded) do if k:match("^neo%-vim%-window") then package.loaded[k] = nil end end
     lua require("neo-vim-window").Start()
 endfun
+
+NeoVimWindow()
 
 let g:neo_vim_window_padding = 8
 
