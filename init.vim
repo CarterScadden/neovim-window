@@ -2,7 +2,7 @@ echo "Whats up Carter!!!"
 
 augroup NEOVIM_WINDOW
   autocmd!
-  autocmd CursorMoved *.vim echo "Hello World - Carter"
+  autocmd CursorMoved * :lua print("Hello World - Carter")
 augroup END
 
 
