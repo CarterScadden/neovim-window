@@ -5,7 +5,7 @@ local function Start()
   print("Window Size!", uiState.width, uiState.height)
 
   buffer = vim.api.nvim_create_buf(false, true)
-  window = winId = vim.api.nvim_open_win(buffer, true, {
+  window = vim.api.nvim_open_win(buffer, true, {
     relative="editor",
     width = width - 4,
     height = height - 4,

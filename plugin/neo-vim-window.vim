@@ -1,12 +1,11 @@
-lua print("HI CARTER")
+let s:save_cpo = &cpo " save user coptions
+set cpo&vim " reset them to defaults
 
-fun! NeoVimWindow()
-  lua print("HI CARTER I AM STARTING")
-  lua for k in pairs(package.loaded) do if k:match("^neo%-vim%-window") then package.loaded[k] = nil end end
-    lua require("neo-vim-window").Start()
-endfunction
+" command to run our plugin
+command! NeoVimWindow lua require("neo-vim-window").Start()
 
-let g:neo_vim_window_padding = 8
+let &cpo = s:save_cpo " and restore after
+unlet s:save_cpo
 
 augroup NEOVIM_WINDOW
   autocmd!
