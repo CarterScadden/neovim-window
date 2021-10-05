@@ -1,6 +1,9 @@
+print("Reading Lua File - Carter")
 local buffer, window
 
 local function Start()
+  print("running start!");
+
   local uiState = vim.api.nvim_list_uis()[1]
   print("Window Size!", uiState.width, uiState.height)
   --[[
@@ -37,6 +40,6 @@ end
 
 
 return {
-  Start = Start
+  Start = Start,
   Resize = Resize
 }
