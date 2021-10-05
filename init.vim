@@ -1,4 +1,4 @@
 augroup NEOVIM_WINDOW
   autocmd!
-  autocmd BufWrite lua print("Hello World - Carter")
+  autocmd BufWritePost lua print("Hello World - Carter")
 augroup END
