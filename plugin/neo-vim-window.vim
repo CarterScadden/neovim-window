@@ -1,4 +1,8 @@
+lua print("HI CARTER")
+set nonumber
+
 fun! NeoVimWindow()
+  lua print("HI CARTER")
   lua for k in pairs(package.loaded) do if k:match("^neo%-vim%-window") then package.loaded[k] = nil end end
     lua require("neo-vim-window").Start()
 endfun
